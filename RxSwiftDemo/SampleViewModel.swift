@@ -17,7 +17,7 @@ struct SampleViewModel {
   var model = PublishSubject<[SampleModel]>()
   
   mutating func requestData() {
-    Alamofire.request(.GET, url).rx_responseJSON()
+    Alamofire.request(.GET, url).rx_responseJSON().observeOn(MainScheduler.instance)
       .subscribe(onNext: { data in
         var array = [SampleModel]()
         let json = JSON(data)
