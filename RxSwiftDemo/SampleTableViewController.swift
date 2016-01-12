@@ -25,18 +25,10 @@ class SampleTableViewController: UIViewController {
     tableView.snp_makeConstraints { make in
       make.top.left.right.bottom.equalTo(view)
     }
-//    tableView.delegate = self
-//    tableView.dataSource = self
+    
     tableView.registerClass(CustomCell.self, forCellReuseIdentifier: "Cell")
     viewModel.requestData()
     
-    dataArray = viewModel.model.map{$0}
-//    viewModel.model.subscribeNext { (array) -> Void in
-//      Log.YGLog(array)
-//      self.dataArray = array
-//      self.tableView.reloadData()
-//    }.addDisposableTo(disposeBag)
-
     viewModel.model.map {$0}.bindTo(tableView.rx_itemsWithCellIdentifier("Cell", cellType: CustomCell.self)) { row, item, cell in
         cell.titleLabel.text = item.id
         cell.contentLabel.text = item.title
@@ -47,17 +39,3 @@ class SampleTableViewController: UIViewController {
     }.addDisposableTo(disposeBag)
   }
 }
-
-//extension SampleTableViewController: UITableViewDataSource, UITableViewDelegate {
-//  func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-//    return dataArray.count
-//  }
-//  
-//  func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
-//    let cell = tableView.dequeueReusableCellWithIdentifier("Cell") as! CustomCell
-//    cell.titleLabel.text = dataArray[indexPath.row].id
-//    cell.contentLabel.text = dataArray[indexPath.row].title
-//    cell.imgView.kf_setImageWithURL(NSURL(string: dataArray[indexPath.row].image)!, placeholderImage: UIImage(named: "0"))
-//    return cell
-//  }
-//}
