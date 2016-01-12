@@ -1,0 +1,39 @@
+PODS:
+  - Alamofire (3.1.4)
+  - Kingfisher (1.9.1)
+  - RxBlocking (2.0.0):
+    - RxSwift (~> 2.0)
+  - RxCocoa (2.0.0):
+    - RxSwift (~> 2.0)
+  - RxSwift (2.0.0)
+  - SnapKit (0.18.0)
+  - SwiftyJSON (2.3.2)
+
+DEPENDENCIES:
+  - Alamofire (~> 3.0)
+  - Kingfisher (~> 1.9.1)
+  - RxBlocking (~> 2.0)
+  - RxCocoa (~> 2.0)
+  - RxSwift (~> 2.0)
+  - SnapKit (~> 0.18.0)
+  - SwiftyJSON (from `https://github.com/SwiftyJSON/SwiftyJSON.git`)
+
+EXTERNAL SOURCES:
+  SwiftyJSON:
+    :git: https://github.com/SwiftyJSON/SwiftyJSON.git
+
+CHECKOUT OPTIONS:
+  SwiftyJSON:
+    :commit: 5f59648a6e9356b26c5cb698ab924fa7d750b6c9
+    :git: https://github.com/SwiftyJSON/SwiftyJSON.git
+
+SPEC CHECKSUMS:
+  Alamofire: fbc829692f351fa1d8a31dd75fd7f7f56fea31fb
+  Kingfisher: 98fedd5d44d982b331fc7303f9f6144b7d8ba289
+  RxBlocking: a95a10ed54eb5d116f6c9a87047ff671e181d07b
+  RxCocoa: b0ebd70b4f7450bdb3c8987b122f8fd568dc1e2f
+  RxSwift: d83246efa6f16c50c143bec134649d045498f601
+  SnapKit: e1f090a6d47b1dd4bd89b73f72b6746a7835ef3c
+  SwiftyJSON: 04ccea08915aa0109039157c7974cf0298da292a
+
+COCOAPODS: 0.39.0

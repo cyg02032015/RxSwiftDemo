@@ -7,7 +7,14 @@
 //
 
 import UIKit
-
-class SampleModel: NSObject {
-
+import SwiftyJSON
+struct SampleModel {
+  var id: String
+  var image: String
+  var title: String
+  init(json: JSON) {
+    self.id = json["id"].stringValue ?? ""
+    self.image = json["images"].arrayValue.first?.stringValue ?? ""
+    self.title = json["title"].stringValue ?? ""
+  }
 }
